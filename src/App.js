@@ -26,7 +26,8 @@ function App() {
       <div className="container">
         <FeedbackForm handleAdd={addFeedback}/>
         <FeedbackStats feedback={feedback} />
-        <FeedbackList feedback={feedback} handleDelete={deleteFeedback}/>
+        <FeedbackList feedback={feedback} handleDelete={deleteFeedback}/> 
+        {/* prop drilling: handleDelete is passed to FeedbackList and then to FeedbackItem */}
       </div>
     </>
   );

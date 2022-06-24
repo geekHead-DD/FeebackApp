@@ -1,10 +1,10 @@
 import {useState} from 'react'
  
 function RatingSelect({select}) {
-    const [selected, setSelected]= useState(5)
+    const [selected, setSelected]= useState(10) //set default rating as 10
 
     const handleChange = (e) => {
-        select(+e.currentTarget.value)
+        select(+e.currentTarget.value) //+ converts string type to number
         setSelected(+e.currentTarget.value)
       }
     

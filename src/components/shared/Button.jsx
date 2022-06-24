@@ -1,8 +1,9 @@
+import { type } from '@testing-library/user-event/dist/type'
 import PropTypes from 'prop-types'
 
 function Button(children, type, isDisabled) {
   return (
-    <button type={type} disabled={isDisabled} className={`btn btn-primary`}>
+    <button type={type} disabled={isDisabled} className={`btn btn-primary`}>     {/* properties for submit button */}
         Submit
     </button>
   )

@@ -1,5 +1,4 @@
 import { FaTimes, FaEdit } from 'react-icons/fa'
-import { useState } from 'react'
 import Card from './shared/Card'
 import PropTypes from 'prop-types'
 
@@ -9,15 +8,16 @@ function FeebackItem({item ,handleDelete}) {
     // const handleClick=(id)=>{ 
     //     console.log(id);
     // }
+    /* <button className='close' onClick={()=>handleClick(item.id)}> GRABS ID OF SELECTED ELEMENT AND LOGS IT
+                <FaTimes color='purple' />
+            </button> */
     return (
         <Card>  {/* <Card reverse={true}> passing prop reverse as true */}
             <div className="num-display">{item.rating}</div>   {/* dynamic rendering */}
-            <button className='close' onClick={()=>handleDelete(item.id)}>
-                <FaTimes color='purple' />
+            <button className='close' onClick={()=>handleDelete(item.id)}> {/* event firing*/}
+                <FaTimes color='purple' /> {/* icon */}
             </button>
-            {/* <button className='close' onClick={()=>handleClick(item.id)}>
-                <FaTimes color='purple' />
-            </button> */}
+            
             <div className="text-display">{item.text}</div>
         </Card>
     )
