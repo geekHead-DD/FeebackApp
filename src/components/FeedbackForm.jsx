@@ -4,7 +4,7 @@ import Button from "./shared/Button"
 import RatingSelect from "./RatingSelect"
 
 function FeedbackForm({handleAdd}) {
-    const [text, SetText]= useState('')
+    const [text, setText]= useState('')
     const [rating, setRating] = useState(10)
     const [btnDisabled, setBtnDisabled] = useState(true)
     const [message, setMessage] = useState('')
@@ -23,7 +23,7 @@ function FeedbackForm({handleAdd}) {
             setMessage(null)
         }
 
-        SetText(e.target.value);
+        setText(e.target.value);
     }
 
     const handleSubmit = (e) => {
@@ -36,7 +36,7 @@ function FeedbackForm({handleAdd}) {
 
           handleAdd(newFeedback)
 
-          SetText('')
+          setText('')
         }
     } 
 
