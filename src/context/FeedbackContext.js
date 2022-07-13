@@ -42,6 +42,12 @@ export const FeedbackProvider=({children})=>{
           setFeedback(feedback.filter((item)=>item.id!==id)) //returns all ids except the input id i.e DELETION
         }
       }
+
+    //update feedback
+    const updateFeedback = (id, updItem)=>{
+        setFeedback(feedback.map((item)=>
+        (item.id===id ?{...item, ...updItem}: item))
+        )}
     
       //set item to be updated
     const editFeedback=(item)=>{
@@ -53,10 +59,11 @@ export const FeedbackProvider=({children})=>{
 
     return <FeedbackContext.Provider value={{
         feedback,
+        feedbackEdit,//actual state that holds the item and boolean
         deleteFeedback,
         addFeedback,
         editFeedback,
-        feedbackEdit,//actual state that holds the item and boolean
+        updateFeedback,
     }}>
         {children}
     </FeedbackContext.Provider>
