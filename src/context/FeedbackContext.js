@@ -47,7 +47,13 @@ export const FeedbackProvider=({children})=>{
     const updateFeedback = (id, updItem)=>{
         setFeedback(feedback.map((item)=>
         (item.id===id ?{...item, ...updItem}: item))
-        )}
+        )
+        // FIX: this fixes being able to add a feedback after editing
+        setFeedbackEdit({
+            item: {},
+            edit: false,
+        })
+    }
     
       //set item to be updated
     const editFeedback=(item)=>{

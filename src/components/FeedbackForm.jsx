@@ -51,8 +51,11 @@ function FeedbackForm() {
           else{
             addFeedback(newFeedback)
           }
-          
-          setText('')
+
+          // NOTE: reset to default state after submission
+            setBtnDisabled(true) // 👈  add this line to reset disabled
+            setRating(10) //👈 add this line to set rating back to 10
+            setText('')
         }
     } 
 
