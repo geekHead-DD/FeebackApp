@@ -56,6 +56,7 @@ export const FeedbackProvider=({children})=>{
         deleteFeedback,
         addFeedback,
         editFeedback,
+        feedbackEdit,//actual state that holds the item and boolean
     }}>
         {children}
     </FeedbackContext.Provider>
