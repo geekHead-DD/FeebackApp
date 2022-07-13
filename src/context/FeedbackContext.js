@@ -25,23 +25,37 @@ export const FeedbackProvider=({children})=>{
         },
     ])
 
+    const[feedbackEdit,setFeedbackEdit]= useState({
+        item: {},
+        edit: false
+    })
+
+    //add feedback
     const addFeedback= (newFeedback)=>{
         newFeedback.id= uuidv4()
         setFeedback([newFeedback, ...feedback]) //add current feeback array as items from current feeback and new ones
     }
 
+    //delete feedback
     const deleteFeedback=(id)=>{
         if (window.confirm('Are you sure you want to delete?')){
           setFeedback(feedback.filter((item)=>item.id!==id)) //returns all ids except the input id i.e DELETION
         }
       }
     
-    
+      //set item to be updated
+    const editFeedback=(item)=>{
+        setFeedbackEdit({
+            item,
+            edit: true
+        })
+    }
 
     return <FeedbackContext.Provider value={{
         feedback,
         deleteFeedback,
         addFeedback,
+        editFeedback,
     }}>
         {children}
     </FeedbackContext.Provider>
