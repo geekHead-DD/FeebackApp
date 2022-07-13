@@ -62,7 +62,7 @@ function FeedbackForm() {
     return (
         <Card>
             <form onSubmit={handleSubmit}>
-                <h2>Kindly rate our service here</h2>
+                <h2>Your feedback is important to us</h2>
                 <RatingSelect select={(rating)=>setRating(rating)}/>
                 <div className="input-group">
                     <input onChange={handleTextChange} type="text" placeholder="Write a review" value={text} />
